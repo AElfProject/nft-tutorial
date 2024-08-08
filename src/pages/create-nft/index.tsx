@@ -140,6 +140,28 @@ const CreateNftPage = ({
     return await aelf.chain.contractAt(tokenContractAddress, wallet);
   };
 
+  // Get CrossChain Contract
+  const getCrossChainContract = async (aelf:any, wallet: any) => {
+    const crossChainContractName = "AElf.ContractNames.CrossChain";
+  
+    // get chain status
+    const chainStatus = await aelf.chain.getChainStatus();
+    // get genesis contract address
+    const GenesisContractAddress = chainStatus.GenesisContractAddress;
+    // get genesis contract instance
+    const zeroContract = await aelf.chain.contractAt(
+      GenesisContractAddress,
+      wallet
+    );
+    // Get contract address by the read only method `GetContractAddressByName` of genesis contract
+    const crossChainContractAddress =
+      await zeroContract.GetContractAddressByName.call(
+        AElf.utils.sha256(crossChainContractName)
+      );
+  
+    return await aelf.chain.contractAt(crossChainContractAddress, wallet);
+  };
+
   //============== Create NFT Collection Steps =================//
 
   // step 1 - Create New NFT Collection on MainChain Function
