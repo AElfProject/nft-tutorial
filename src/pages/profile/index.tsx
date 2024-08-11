@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { NFT_IMAGES } from "@/lib/constant";
 import { toast } from "react-toastify";
 import { CopyIcon } from "@/components/ui/icons";
+import { fetchUserNftData } from "@/lib/commonFunctions";
 
 const ProfilePage = ({
   provider,

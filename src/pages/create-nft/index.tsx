@@ -109,15 +109,7 @@ const CreateNftPage = ({
   }, [isNftCreate]);
 
   // Step D - Configure NFT Form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      tokenName: "",
-      symbol: "",
-      totalSupply: "",
-      decimals: "",
-    },
-  }); 
+  const form = useForm<z.infer<typeof formSchema>>();
 
   // Get Token Contract
   const getTokenContract = async (aelf: any, wallet: any) => {

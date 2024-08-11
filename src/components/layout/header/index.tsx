@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { IPortkeyProvider, MethodsBase } from "@portkey/provider-types";
 import detectProvider from "@portkey/detect-provider";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./header.scss";
 
 // This is the profile button SVG icon

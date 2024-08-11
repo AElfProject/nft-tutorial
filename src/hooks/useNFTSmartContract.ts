@@ -1,6 +1,8 @@
 import { IPortkeyProvider, IChain } from "@portkey/provider-types";
 import { useEffect, useState } from "react";
 
+type IContract = ReturnType<IChain["getContract"]>;
+
 // Custom Hook for interacting with NFT Smart Contracts
 const useNFTSmartContract = (provider: IPortkeyProvider | null) => {
   // State variables to store the smart contract instances
