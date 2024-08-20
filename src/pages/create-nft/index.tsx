@@ -24,6 +24,7 @@ import useNFTSmartContract from "@/hooks/useNFTSmartContract";
 import "./create-nft.scss";
 
 import { CustomToast, delay, removeNotification } from "@/lib/utils";
+import { InfoIcon } from "@/components/ui/icons";
 
 const formSchema = z.object({
   tokenName: z.string(),
@@ -228,7 +229,7 @@ const CreateNftPage = ({
                   name="symbol"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Symbol</FormLabel>
+                      <FormLabel className="symbol-label">Symbol <InfoIcon className="info-icon"/></FormLabel>
                       <FormControl>
                         <Input placeholder="Enter Symbol" {...field} />
                       </FormControl>

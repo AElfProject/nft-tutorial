@@ -3,11 +3,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px); /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
+  min-height: calc(100vh - 200px);
+  /* Full height of the viewport */
+  width: 100vw;
+  /* Full width of the viewport */
   padding: 20px;
   box-sizing: border-box;
-  position: relative; /* Added to ensure proper positioning */
+  position: relative;
+  /* Added to ensure proper positioning */
 
   /* This will center the content horizontally and manage the width of the form */
   .form-container {
@@ -38,7 +41,8 @@
   }
 
   .input-group input {
-    width: calc(100% - 1em); /* Subtract padding from the width */
+    width: calc(100% - 1em);
+    /* Subtract padding from the width */
     margin-bottom: 1em;
     padding: 0.5em;
     padding-left: 15px;
@@ -62,6 +66,7 @@
     border-color: var(--app-purple);
     box-shadow: 0 0 3px 2px #646cff30;
   }
+
   .input-group input::placeholder,
   .input-group textarea::placeholder {
     color: #888;
@@ -72,5 +77,50 @@
     justify-content: center;
     width: 100%;
     gap: 10px;
+  }
+
+  .input-group {
+    .symbol-label {
+      display: flex !important;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+      cursor: pointer;
+      width: fit-content;
+
+      svg {
+        height: 17px;
+        width: 17px;
+      }
+
+      &::after {
+        content: "The Symbol must be 12 characters: a 10-character NFT Seed Token Symbol (e.g., FDABSXUJAZ) plus a unique integer ID. For an NFT Collection, the ID is always 0 (e.g., FDABSXUJAZ-0). For an NFT Token, the ID can be any integer except 0.";
+        position: absolute;
+        width: 300px;
+        top: 0;
+        left: calc(100% + 170px);
+        transform: translateX(-50%);
+        background-color: #808080;
+        padding: 10px 15px;
+        background-color: white;
+        border-radius: 15px;
+        border: 1px solid #1371dd2d;
+        box-shadow: 0 0 5px 2px #1371dd23;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s, visibility 0.4s;
+        font-size: 12px;
+        z-index: 10;
+        text-wrap: wrap;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
   }
 }
