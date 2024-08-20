@@ -3,14 +3,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px);
-  /* Full height of the viewport */
-  width: 100vw;
-  /* Full width of the viewport */
+  min-height: calc(100vh - 200px); /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
   padding: 20px;
   box-sizing: border-box;
-  position: relative;
-  /* Added to ensure proper positioning */
+  position: relative; /* Added to ensure proper positioning */
 
   /* This will center the content horizontally and manage the width of the form */
   .form-container {
@@ -41,8 +38,7 @@
   }
 
   .input-group input {
-    width: calc(100% - 1em);
-    /* Subtract padding from the width */
+    width: calc(100% - 1em); /* Subtract padding from the width */
     margin-bottom: 1em;
     padding: 0.5em;
     padding-left: 15px;
